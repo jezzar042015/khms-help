@@ -13,11 +13,11 @@
             </div>
             <div>
                 <ul class="flex space-x-16">
-                    <li v-for="{ label, view } in menuItems" @click="viewStore.changeView(view)"
+                    <li v-for="{ label, view, publish } in menuItems" @click="viewStore.changeView(view)" v-show="publish"
                         :class="menuFormat(view)">
                         {{ label }}
                     </li>
-                    <li @click="gotoScheduler" class="cursor-pointer p-3 text-black/80 hover:text-black" >Scheduler</li>
+                    <li @click="gotoScheduler" class="cursor-pointer p-3 text-black/80 hover:text-black">Scheduler</li>
                 </ul>
             </div>
         </div>
@@ -35,10 +35,10 @@
 
     const viewStore = useViewStore()
 
-    const menuItems: { label: string, view: Views }[] = [
-        { label: 'FAQ', view: 'faq' },
-        { label: 'Tutorials', view: 'help' },
-        { label: 'About', view: 'about' }
+    const menuItems: { label: string, view: Views, publish: boolean }[] = [
+        { label: 'FAQ', view: 'faq', publish: true },
+        { label: 'Tutorials', view: 'help', publish: true },
+        { label: 'About', view: 'about', publish: false }
     ]
 
     const menuFormat = (view: Views) => {
