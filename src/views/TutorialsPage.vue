@@ -3,7 +3,7 @@
         <PageHeader title="Tutorials" />
         <div class="px-3 pt-10">
             <div class="flex flex-col space-y-4">
-                <template v-for="(tutorial, index) in tutorials" :key="index">
+                <template v-for="tutorial in tutorials" :key="tutorial.title">
                     <TutorialMenuItem :title="tutorial.title" :description="tutorial.description" />
                 </template>
 
