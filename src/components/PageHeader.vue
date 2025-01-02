@@ -48,7 +48,6 @@
     }
 
     const gotoScheduler = () => {
-        console.log(import.meta.env.VITE_SCHEDULER_APP);
         window.location.href = import.meta.env.VITE_SCHEDULER_APP
     }
 </script>
