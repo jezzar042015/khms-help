@@ -17,7 +17,7 @@
                         :class="menuFormat(view)">
                         {{ label }}
                     </li>
-                    <li @click="gotoScheduler" class="cursor-pointer p-3 text-black/80 hover:text-black">Scheduler</li>
+                    <li @click="gotoScheduler" class="cursor-pointer p-3 text-black/80 hover:text-black">Go To Scheduler App</li>
                 </ul>
             </div>
         </div>
