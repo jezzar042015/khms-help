@@ -19,19 +19,30 @@
             </div>
 
             <h2 class="font-bold text-xl py-3">Steps</h2>
-            <ol class="list-decimal list-inside text-lg flex flex-col space-y-3">
+            <ol class="list-decimal list-inside text-lg space-y-3">
                 <li>
                     <span>Select the month when the Circuit Overseer will visit.</span>
                 </li>
                 <li>
-                    <span>Open <b>Settings</b> by clicking the gear icon.</span>
+                    <div class="inline-flex items-center space-x-2">
+                        Open &nbsp;<b>Settings</b>&nbsp; by clicking the gear icon
+                        <IconGear class="h-6 w-6" />.
+                    </div>
                 </li>
+
                 <li>
                     <span>Go to the <b>Circuit Overseer’s Visit</b> section in the settings.</span>
                 </li>
-                <li>
-                    <span>Toggle the switch for <i class="font-bold">Has Circuit Overseer’s visit this month</i> to
-                        ON.</span>
+                <li class="flex items-center">
+                    <div class="space-y-5">
+                        <span>
+                            Toggle the switch for <i class="font-bold">Has Circuit Overseer’s visit this month</i> to
+                            ON.
+                        </span>
+                        <div>
+                            <img src="../imgs/T001-01.png" alt="Toggling Circuit Overseer's visit" class="w-3/5">
+                        </div>
+                    </div>
                 </li>
                 <li>
                     <span>Choose the <b>visit week</b>.</span>
@@ -58,6 +69,7 @@
 
 <script setup lang="ts">
     import TutorialContent from '../../layouts/TutorialContent.vue';
+    import IconGear from '../icons/IconGear.vue';
 
 
 </script>
