@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-    import { useViewStore } from '../stores/viewStore';
+    import { useViewStore } from '../stores/views';
     import type { Views } from '../types/views';
 
     const { subheader = 'KH Meeting Scheduler', title } = defineProps<{

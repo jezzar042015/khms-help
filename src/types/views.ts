@@ -1,1 +1,1 @@
-export type Views = 'faq' | 'about' | 'contact' | 'help' | 'tutorial-content'
+export type Views = 'faq' | 'about' | 'contact' | 'help' 
