@@ -3,26 +3,29 @@
         <PageHeader title="Tutorials" />
         <div class="px-3 pt-10">
             <div class="flex flex-col space-y-8">
-                <template v-for="tutorial in tutorials" :key="tutorial.id">
+                <template v-for="tutorial in tutorialsStore.published" :key="tutorial.id">
                     <TutorialMenuItem :title="tutorial.title" :description="tutorial.description"
                         v-show="tutorial.publish" @click="setTutorialId(tutorial.id)" />
                 </template>
 
             </div>
         </div>
-        <DuringCircuitOverseerVisit v-if="onTutorial && tutorialId === 1" 
-            class="absolute z-10 top-0 left-0 bg-white w-full h-screen" @off-tutorial="offTutorial"/>
+        <DuringCircuitOverseerVisit v-if="onTutorial && tutorialId === 1"
+            class="absolute z-10 top-0 left-0 bg-white w-full h-screen" @off-tutorial="offTutorial" />
     </div>
 
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue';
+    import { onMounted, ref } from 'vue';
+    import { useTutorialStore } from '../stores/tutorials';
+    import { useRouterStore } from '../stores/router';
     import PageHeader from '../components/PageHeader.vue';
     import TutorialMenuItem from '../components/TutorialMenuItem.vue';
-
     import DuringCircuitOverseerVisit from '../assets/tutorials/DuringCircuitOverseerVisit.vue';
 
+    const tutorialsStore = useTutorialStore()
+    const routerStore = useRouterStore()
     const onTutorial = ref(false);
     const offTutorial = () => onTutorial.value = false;
     const tutorialId = ref(0);
@@ -32,36 +35,16 @@
         onTutorial.value = true
     }
 
-    const tutorials = ref<{
-        id: number
-        title: string
-        description: string
-        publish: boolean
-    }[]>([
-        {
-            id: 1,
-            title: "Changing the Schedule for a Circuit Overseer's Visit",
-            description: "Learn how to manage schedule changes during a Circuit Overseer's visit.",
-            publish: true
-        },
-        {
-            id: 2,
-            title: 'During Circuit Assemblies or Conventions',
-            description: "Learn how to manage schedule changes during Circuit Assemblies and Regional Conventions.",
-            publish: false
-        },
-        {
-            id: 3,
-            title: "Setting the Day of your Congregation's Midweek Meeting",
-            description: "Learn how to set your congregation's midweek meeting day. This will enhance the app's ability to generate weekly dates on your schedule.",
-            publish: false
-        },
-        {
-            id: 4,
-            title: "Setting the Start Time of your Midweek Meeting",
-            description: "Learn how to set the start time of your midweek meeting. This will ensure the adjusted meeting runtime fits to your meeting.",
-            publish: false
+    onMounted(() => {
+        const item = routerStore.getParam('item')
+        if (!item) return
+        
+        if (!tutorialsStore.isPublished(Number(item))) {
+            routerStore.deleteParam('item')    
+            return
         }
-    ])
+        setTutorialId(Number(item))
+
+    })
 
 </script>
