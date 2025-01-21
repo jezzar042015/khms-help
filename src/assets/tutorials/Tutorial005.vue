@@ -10,7 +10,7 @@
                         updates.
                     </p>
                 </div>
-                
+
                 <div>
                     <img src="../imgs/T005-01.png" alt="Changing the part title" class="w-3/5">
                 </div>
@@ -21,7 +21,7 @@
                         <span>Click on the part of "Local Needs" you want to change.</span>
                     </li>
                     <li>
-                        <span>Type the new title, like <i style="text-decoration: underline;">Video: 2025 Governing
+                        <span>Type the new title, like <i style="text-decoration: underline;">Video: 2025 Governing Body
                                 Update #2</i></span>
                     </li>
                     <li>
