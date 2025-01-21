@@ -10,7 +10,9 @@
 
             </div>
         </div>
-        <DuringCircuitOverseerVisit v-if="onTutorial && tutorialId === 1"
+        <Tutorial001 v-if="onTutorial && tutorialId === 1"
+            class="absolute z-10 top-0 left-0 bg-white w-full h-screen" @off-tutorial="offTutorial" />
+        <Tutorial005 v-if="onTutorial && tutorialId === 5"
             class="absolute z-10 top-0 left-0 bg-white w-full h-screen" @off-tutorial="offTutorial" />
     </div>
 
@@ -22,7 +24,8 @@
     import { useRouterStore } from '../stores/router';
     import PageHeader from '../components/PageHeader.vue';
     import TutorialMenuItem from '../components/TutorialMenuItem.vue';
-    import DuringCircuitOverseerVisit from '../assets/tutorials/DuringCircuitOverseerVisit.vue';
+    import Tutorial001 from '../assets/tutorials/Tutorial001.vue';
+import Tutorial005 from '../assets/tutorials/Tutorial005.vue';
 
     const tutorialsStore = useTutorialStore()
     const routerStore = useRouterStore()
