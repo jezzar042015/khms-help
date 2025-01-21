@@ -1,5 +1,5 @@
 <template>
-    <TutorialContent title="Changing the Local Needs Title">
+    <TutorialContent title="Changing the Local Needs Part">
 
         <div class="py-3 px-3">
             <div class="pb-3">

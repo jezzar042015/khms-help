@@ -27,7 +27,7 @@ const tutorials: Tutorial[] = [
     },
     {
         id: 5,
-        title: "Editing the Local Needs Part Title",
+        title: "Changing the Local Needs Part",
         description: "Learn how to change the title for Local needs parts in your congregation and other meeting changes such as Governing Body Updates.",
         publish: true
     }
