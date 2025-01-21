@@ -24,6 +24,12 @@ const tutorials: Tutorial[] = [
         title: "Setting the Start Time of your Midweek Meeting",
         description: "Learn how to set the start time of your midweek meeting. This will ensure the adjusted meeting runtime fits to your meeting.",
         publish: false
+    },
+    {
+        id: 5,
+        title: "Editing the Local Needs Part Title",
+        description: "Learn how to change the title for Local needs parts in your congregation and other meeting changes such as Governing Body Updates.",
+        publish: true
     }
 ]
 
