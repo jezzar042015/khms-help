@@ -33,7 +33,7 @@ const tutorials: Tutorial[] = [
     },
     {
         id: 6,
-        title: "Switching Schedule Templates",
+        title: "Switching Between Schedule Templates",
         description: "S-140 and customized template options are available. Learn how to switch between them.",
         publish: true
     }
