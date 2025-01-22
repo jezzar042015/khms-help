@@ -2,7 +2,7 @@
     <div class="py-3 px-3 relative">
         <PageHeader title="Tutorials" />
         <div class="px-3 pt-10">
-            <div class="flex flex-col space-y-8">
+            <div class="flex flex-col space-y-1">
                 <template v-for="tutorial in tutorialsStore.published" :key="tutorial.id">
                     <TutorialMenuItem :title="tutorial.title" :description="tutorial.description"
                         v-show="tutorial.publish" @click="setTutorialId(tutorial.id)" />
@@ -10,10 +10,12 @@
 
             </div>
         </div>
-        <Tutorial001 v-if="onTutorial && tutorialId === 1"
-            class="absolute z-10 top-0 left-0 bg-white w-full h-screen" @off-tutorial="offTutorial" />
-        <Tutorial005 v-if="onTutorial && tutorialId === 5"
-            class="absolute z-10 top-0 left-0 bg-white w-full h-screen" @off-tutorial="offTutorial" />
+        <Tutorial001 v-if="onTutorial && tutorialId === 1" class="absolute z-10 top-0 left-0 bg-white w-full h-screen"
+            @off-tutorial="offTutorial" />
+        <Tutorial005 v-if="onTutorial && tutorialId === 5" class="absolute z-10 top-0 left-0 bg-white w-full h-screen"
+            @off-tutorial="offTutorial" />
+        <Tutorial006 v-if="onTutorial && tutorialId === 6" class="absolute z-10 top-0 left-0 bg-white w-full h-screen"
+            @off-tutorial="offTutorial" />
     </div>
 
 </template>
@@ -25,7 +27,8 @@
     import PageHeader from '../components/PageHeader.vue';
     import TutorialMenuItem from '../components/TutorialMenuItem.vue';
     import Tutorial001 from '../assets/tutorials/Tutorial001.vue';
-import Tutorial005 from '../assets/tutorials/Tutorial005.vue';
+    import Tutorial005 from '../assets/tutorials/Tutorial005.vue';
+    import Tutorial006 from '../assets/tutorials/Tutorial006.vue';
 
     const tutorialsStore = useTutorialStore()
     const routerStore = useRouterStore()
@@ -41,9 +44,9 @@ import Tutorial005 from '../assets/tutorials/Tutorial005.vue';
     onMounted(() => {
         const item = routerStore.getParam('item')
         if (!item) return
-        
+
         if (!tutorialsStore.isPublished(Number(item))) {
-            routerStore.deleteParam('item')    
+            routerStore.deleteParam('item')
             return
         }
         setTutorialId(Number(item))

@@ -30,6 +30,12 @@ const tutorials: Tutorial[] = [
         title: "Changing the Local Needs Part",
         description: "Learn how to change the title for Local needs parts in your congregation and other meeting changes such as Governing Body Updates.",
         publish: true
+    },
+    {
+        id: 6,
+        title: "Switching Schedule Templates",
+        description: "S-140 and customized template options are available. Learn how to switch between them.",
+        publish: true
     }
 ]
 
