@@ -10,12 +10,15 @@
 
             </div>
         </div>
+        <Tutorial007 v-if="onTutorial && tutorialId === 7" class="absolute z-10 top-0 left-0 bg-white w-full h-screen"
+            @off-tutorial="offTutorial" />
         <Tutorial001 v-if="onTutorial && tutorialId === 1" class="absolute z-10 top-0 left-0 bg-white w-full h-screen"
             @off-tutorial="offTutorial" />
         <Tutorial005 v-if="onTutorial && tutorialId === 5" class="absolute z-10 top-0 left-0 bg-white w-full h-screen"
             @off-tutorial="offTutorial" />
         <Tutorial006 v-if="onTutorial && tutorialId === 6" class="absolute z-10 top-0 left-0 bg-white w-full h-screen"
             @off-tutorial="offTutorial" />
+        
     </div>
 
 </template>
@@ -29,6 +32,7 @@
     import Tutorial001 from '../assets/tutorials/Tutorial001.vue';
     import Tutorial005 from '../assets/tutorials/Tutorial005.vue';
     import Tutorial006 from '../assets/tutorials/Tutorial006.vue';
+    import Tutorial007 from '../assets/tutorials/Tutorial007.vue';
 
     const tutorialsStore = useTutorialStore()
     const routerStore = useRouterStore()

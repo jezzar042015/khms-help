@@ -3,7 +3,7 @@
         <div class="flex justify-between items-center">
             <div>
                 <div>
-                    <h2>{{ subheader }}</h2>
+                    <h2 class="underline cursor-pointer" @click="emits('to-tutorials')">{{ subheader }}</h2>
                 </div>
                 <div class="mt-2">
                     <h1 class="font-bold text-3xl">
@@ -22,4 +22,5 @@
         title: string
     }>()
 
+    const emits = defineEmits(['to-tutorials'])
 </script>

@@ -1,6 +1,6 @@
 <template>
-    <div class="py-3 px-3">
-        <TutorialHeader :title="title" />
+    <div class="py-12 px-3">
+        <TutorialHeader :title="title" @to-tutorials="emits('off-tutorial')" />
 
         <slot name="default">
 

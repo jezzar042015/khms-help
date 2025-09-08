@@ -2,6 +2,12 @@ import type { Tutorial } from "../types/tutorials"
 
 const tutorials: Tutorial[] = [
     {
+        id: 7,
+        title: "Printing or Saving to a PDF File",
+        description: "Proper way in printing the meeting schedules",
+        publish: true
+    },
+    {
         id: 1,
         title: "Changing the Schedule for a Circuit Overseer's Visit",
         description: "Learn how to manage schedule changes during a Circuit Overseer's visit.",
@@ -36,7 +42,8 @@ const tutorials: Tutorial[] = [
         title: "Switching Between Schedule Templates",
         description: "S-140 and customized template options are available. Learn how to switch between them.",
         publish: true
-    }
+    },
+
 ]
 
 export default tutorials
