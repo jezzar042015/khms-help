@@ -1,5 +1,5 @@
 <template>
-    <div class="py-3 px-3 relative">
+    <div class="pt-14 pb-5 px-3">
         <PageHeader title="Tutorials" />
         <div class="px-3 pt-10">
             <div class="flex flex-col space-y-1">

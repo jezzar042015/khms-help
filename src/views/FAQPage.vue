@@ -1,5 +1,5 @@
 <template>
-    <div class="py-3 px-3">
+    <div class="pt-14 pb-5 px-3">
         <PageHeader title="Frequently Asked Questions" />
 
         <div class="px-3 pt-10">
